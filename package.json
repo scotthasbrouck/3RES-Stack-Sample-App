@@ -1,0 +1,19 @@
+{
+  "name": "3res_todo",
+  "version": "1.0.0",
+  "description": "A sample todo app for the 3RES stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/scotthasbrouck/3RES-Stack-Sample-App.git"
+  },
+  "author": "Scott Hasbrouck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scotthasbrouck/3RES-Stack-Sample-App/issues"
+  },
+  "homepage": "https://github.com/scotthasbrouck/3RES-Stack-Sample-App#readme"
+}
