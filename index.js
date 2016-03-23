@@ -1,12 +1,11 @@
 // 3RES Todo Sample App
 // index.js
 
-var path = require('path');
-
 // Express
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
+var path = require('path');
 
 // Socket.io
 var io = require('socket.io')(server);

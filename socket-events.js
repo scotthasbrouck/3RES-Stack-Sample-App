@@ -1,4 +1,5 @@
 // Socket.io events for changefeed
+// socket-events.js
 
 module.exports = function(socket, entityName) {
 	return function(rows) {
@@ -11,7 +12,7 @@ module.exports = function(socket, entityName) {
 				socket.emit(entityName + ":update", row.new_val);
 			}
 			else if (row.old_val && !row.new_val) {
-				socket.emit(entityName + ":delete", row.old_val);
+				socket.emit(entityName + ":delete", { id: row.old_val.id });
 			}
 		});
 	};
