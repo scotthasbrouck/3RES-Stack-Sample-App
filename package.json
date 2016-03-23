@@ -11,9 +11,14 @@
     "url": "git+ssh://git@github.com/scotthasbrouck/3RES-Stack-Sample-App.git"
   },
   "author": "Scott Hasbrouck",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/scotthasbrouck/3RES-Stack-Sample-App/issues"
   },
-  "homepage": "https://github.com/scotthasbrouck/3RES-Stack-Sample-App#readme"
+  "homepage": "https://github.com/scotthasbrouck/3RES-Stack-Sample-App#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "rethinkdb": "^2.2.2",
+    "socket.io": "^1.4.5"
+  }
 }

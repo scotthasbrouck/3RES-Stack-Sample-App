@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io.connect('/');
+			socket.on('todo:new', function (data) {
+				console.log("NEW");
+				console.log(data);
+			});
+			socket.on('todo:update', function (data) {
+				console.log("UPDATE");
+				console.log(data);
+			});
+			socket.on('todo:delete', function (data) {
+				console.log("DELETE");
+				console.log(data);
+			});
+		</script>
+	</head>
+	<body>Checkout the Console!</body>
+<html>
