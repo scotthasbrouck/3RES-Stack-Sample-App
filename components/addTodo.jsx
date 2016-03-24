@@ -5,6 +5,10 @@ import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import RaisedButton from 'material-ui/lib/raised-button';
 import TextField from 'material-ui/lib/text-field';
 
+// Import socket and connect
+import io from 'socket.io-client';
+const socket = io.connect('/');
+
 export default class AddTodo extends React.Component {
 	constructor(props) {
 		super(props);
@@ -25,7 +29,13 @@ export default class AddTodo extends React.Component {
 	handleNewTaskInput = (event) => {
 		if (event.keyCode === 13) {
 			if (event.target.value && event.target.value.length > 0) {
-				console.log(event.target.value);
+
+				// Emit socket event for new todo
+				socket.emit('todo:client:insert', {
+					completed: false,
+					name: event.target.value
+				});
+
 				this.handlePopoverClose();
 			}
 			else {
