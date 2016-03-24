@@ -9,12 +9,14 @@ export default function(store) {
 			todo: todo
 		});
 	});
+
 	socket.on('todo:update', function (todo) {
 		store.dispatch({
 			type: 'todo:update',
 			todo: todo
 		});
 	});
+
 	socket.on('todo:delete', function (todo) {
 		store.dispatch({
 			type: 'todo:delete',

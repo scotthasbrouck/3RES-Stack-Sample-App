@@ -31,12 +31,14 @@ r.connect({ db: '3RES_Todo' })
 			r.table('Todo').insert(todo).run(connection);
 		});
 
+		// update todo
 		socket.on('todo:client:update', function(todo) {
 			var id = todo.id;
 			delete todo.id;
 			r.table('Todo').get(id).update(todo).run(connection);
 		});
 
+		// delete todo
 		socket.on('todo:client:delete', function(todo) {
 			var id = todo.id;
 			delete todo.id;

@@ -9,14 +9,14 @@ class Main extends React.Component {
 	render() {
 		return (<div>
 			<AppBar title="3RES Todo" iconClassNameRight="muidocs-icon-navigation-expand-more" />
-			<TodoList store={this.props} />
+			<TodoList todos={this.props.todos} />
 			<AddTodo />
 		</div>);
 	}
 }
 
 function mapStateToProps(todos) {
-	return { todos: todos };
+	return { todos };
 }
 
 export default connect(mapStateToProps)(Main);

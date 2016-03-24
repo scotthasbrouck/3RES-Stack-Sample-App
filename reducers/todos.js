@@ -1,22 +1,9 @@
 // reducers/todos.js
 
-const todo = (thisTodo, action) => {
-	switch(action.type) {
-		case 'todo:update':
-			if (thisTodo.id === action.todo.id) {
-				return Object.assign({}, thisTodo, action.todo);
-			}
-			else {
-				return thisTodo;
-			}
-		default:
-			return thisTodo;
-	}
-};
-
-
+// todos reducer
 const todos = (state = [], action) => {
-	const findIndex = () => {
+	// return index of action's todo within state
+	const todoIndex = () => {
 		return state.findIndex(thisTodo => {
 			return thisTodo && thisTodo.id === action.todo.id;
 		});
@@ -24,17 +11,30 @@ const todos = (state = [], action) => {
 
 	switch(action.type) {
 		case 'todo:insert':
-			return findIndex() < 0 ? [...state, action.todo] : state;
+			// append todo at end if not already found in state
+			return todoIndex() < 0 ? [...state, action.todo] : state;
+
 		case 'todo:update':
-			return state.map(thisTodo => todo(thisTodo, action));
+			// Merge props to update todo if matching id
+			var index = todoIndex();
+			if (index > -1) {
+				var updatedTodo = Object.assign({}, state[index], action.todo);
+				return [...state.slice(0, index), updatedTodo, ...state.slice(index + 1)]
+			}
+			else {
+				return state;
+			}
+
 		case 'todo:delete':
-			var index = findIndex();
+			// remove matching todo
+			var index = todoIndex();
 			if (index > -1) {
 				return [...state.slice(0, index), ...state.slice(index + 1)];
 			}
 			else {
 				return state;
 			}
+
 		default:
 			return state;
 	}
