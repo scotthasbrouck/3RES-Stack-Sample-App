@@ -1,6 +1,6 @@
 # 3RES-Stack-Sample-App
 
-A sample app demonstrating a 3RES stack (React, Redux, RethinkDB, Express, Socket.IO), based on the post on [webapplog](http://webapplog.com/).
+A sample app demonstrating a 3RES stack (React, Redux, RethinkDB, Express, Socket.IO), based on the post on [David Walsh's Blog](https://davidwalsh.name/).
 
 ##Frontend Only Libraries
 ###React
