@@ -30,6 +30,13 @@ Our sample application will be a simple Todo Checklist with no authentication. O
 #How to Run
 First, run `npm install`, and install RethinkDB.
 
+Once RethinkDB is installed (this app uses version 2.3.1), open a BASH terminal and run
+```
+$ rethinkdb
+```
+
+Navigate to `http://localhost:8080` in your favorite web browser, and use the RethinkDB interface to create a Database called `3RES_Todo`, with a single table named `Todo`.
+
 This app builds with Webpack, and can be build with:
 ```
 $ webpack --progress --colors --watch
