@@ -1,8 +1,7 @@
 import React from 'react';
-import TableRow from 'material-ui/lib/table/table-row';
-import TableRowColumn from 'material-ui/lib/table/table-row-column';
-import Checkbox from 'material-ui/lib/checkbox';
-import IconButton from 'material-ui/lib/icon-button';
+import { TableRow, TableRowColumn } from 'material-ui/Table';
+import Checkbox from 'material-ui/Checkbox';
+import IconButton from 'material-ui/IconButton';
 
 // Import socket and connect
 import io from 'socket.io-client';
